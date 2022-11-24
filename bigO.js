@@ -102,4 +102,4 @@ function allSums(numbers) {
   console.log('these are the sums:');
 }
 
-allSums( [1,2,3,4,5])
+allSums( [1,2,3,4,5,6,7])
