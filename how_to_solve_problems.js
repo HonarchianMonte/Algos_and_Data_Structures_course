@@ -66,7 +66,7 @@
 //should return true.
 
 // Write down my notes: Step 1
-// 2 parameters
+//2 parameters
 // return true or false
 
 //Step 2:
