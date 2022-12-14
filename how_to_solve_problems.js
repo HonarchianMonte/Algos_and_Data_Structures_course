@@ -57,12 +57,12 @@
 
 // Given 2 array,s create a function that let's a user know (true/false) whether these two arrays contain any common items.
 //For Example:
-//const array1 = ['a', 'b', 'c', 'x'];
-//const array2 = ['z', 'y', 'i'];
+// const array1 = ['a', 'b', 'c', 'x'];
+// const array2 = ['z', 'y', 'i'];
 // shohuld return false, because nothing is matching for there to be common items.
 //------------->>>--------
-//const array1 = ['a', 'b', 'c', 'x'];
-//const array2 = ['z', 'y', 'x'];
+// const array1 = ['a', 'b', 'c', 'x'];
+// const array2 = ['z', 'y', 'x'];
 //should return true.
 
 // Write down my notes: Step 1
@@ -74,8 +74,39 @@
 // are these inputs arrays?
 
 //Step 3: What is the goal?
-// How large is this item gunna get? Is time complexion or space more important?
+// Ask large is this item gunna get? Is time complexion or space more important?
 
-//Step 4: Don'tt ask too many questions and be annoying. You've asked enough
+//Step 4: Don't ask too many questions and be annoying. You've asked enough
 
-//Step 5: Brute Force approach is the first thing that comes to mind, think out loud, you don't need to code here.
+//Step 5: Brute Force approach is the first thing that comes to mind, think out loud, you don't need to code here, but see it for understanding
+// const array1 = ['a', 'b', 'c', 'x'];
+// const array2 = ['z', 'y', 'x'];
+
+// function containsCommonItem(arr1, arr2){
+//   for (let i=0; i < arr1.length; i++){
+//     for (let j=0; j < arr2.length; j++){
+//       if (arr1[i] === arr2[j]){
+//         return true;
+//       }
+//     }
+//   }
+//   return false
+// }
+// console.log(containsCommonItem(array1, array2));
+
+//Step 6: Tell why this approach step 5 isn't the best: unreadable, not fast enough, too large.
+// O(a*b) --> O(n^2) can we make this faster? yes we can
+
+// step 7:
+
+// Step 8:
+const array1 = ['a', 'b', 'c', 'x'];
+const array2 = ['z', 'y', 'x'];
+
+// array1 ==> obj {
+  //a:true,
+  //b: true,
+  //c: true,
+  //x: true
+  //}
+  //array2[index] === obj.properties
