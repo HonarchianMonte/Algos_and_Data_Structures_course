@@ -179,12 +179,135 @@
 
 // boooo([1,2,3,4,5]) // O(1) --> because the function has nothing adding space complexity, it's "raw" in a sense
 
-function arrayOfHiNTimes(n){
-  let hiArray = [];
-  for (let i = 0; i < n; i++){
-    hiArray[i] = 'hi';
-  }
-  return hiArray;
+// function arrayOfHiNTimes(n){
+//   let hiArray = [];
+//   for (let i = 0; i < n; i++){ // let i = 0 is constant time because it's a variable
+//     hiArray[i] = 'hi'; // each hi we add is a spot for memory to be used, so it's O(n)
+//   }
+//   return hiArray;
+// }
+
+// arrayOfHiNTimes(6) // O(n)
+
+
+// // Twitter example --> Create a button that gets the first and last tweet a person ever tweeted.
+// // Find 1st, Find Nth...
+// const array = ['hi', 'my', 'teddy'];
+// array[0]; //O(1) Constant Time because it's just one specific index array[0]
+// array[array.length-1] //O(1) Constant Time because it's just one specific index array[2]
+
+//Boss comes back and says compare dates of each quick
+
+// const array = [{
+//   tweet:'hi',
+//   date: 2012
+// }, {
+//   tweet:'my',
+//   date:2014
+// }, {
+//   tweet:'teddy',
+//   date:2018
+//   }];
+// array[0]; 
+// array[array.length-1]
+// O(n^2); because they are nested loops since we are comparing each tweet. We need to make it more effiencient because like this is too costly.
+
+
+// 'sofnmsiodfjmnoisdjmfios'.length // O(1) Constant Time //the BigO notation on  this depends, we need to know how the .length method works on the language 
+// //we are using. Javascript has .length built in, so the string is a simple lookup, it's not a function that calculates.
+// //it works instantly since it's a property and not a function length()
+
+
+//Different Javascript Loops
+// const nemo = ['nemo'];
+// const everyone = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'darla', 'hank'];
+// const large = new Array(10000).fill('nemo');
+
+// function findNemo(array){
+//   let t0 = performance.now();
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === 'nemo') {
+//       console.log('Found NEMO1!');
+//     }
+//   }
+// }
+// findNemo(everyone)
+
+// //the above function can also be written as:
+
+// const findNemo2 = array =>{
+//   array.forEach(fish => {
+//     if(fish === 'nemo'){
+//       console.log('Found Nemo2!');
+//     }
+//   })
+// }
+
+// const findNemo3 = array =>{
+//   for (let fish of array) {
+//     if(fish === 'nemo'){
+//       console.log('Found Nemo3!');
+//     }
+//   }
+// }
+// findNemo(everyone);
+// findNemo2(everyone);
+// findNemo3(everyone);
+
+//-----------------//////
+// 2 parameters - arrays - no size limit
+// return true or false
+// const array1 = ['a','b','c','x'];
+// const array2 = ['z','y','x'];
+
+// function containsCommonItem(arr1, arr2) {
+//     for (let i=0; i< arr1.length; i++) {
+//         for (let j=0; j < arr2.length; j++) {
+//             if(arr1[i] === arr2[j])
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// containsCommonItem(array1, array2);
+
+//0(a*b)
+//O(1) - Space Complexity
+
+// const array1 = ['a','z','c','x'];
+// const array2 = ['z','y','x'];
+
+// function containsCommmonItem2(arr1, arr2) {
+//     // loop through first array and create object where properties ==== items in the array
+//     // can we assume 2 parameters always?
+//     let map = {};
+//     for ( let i=0; i < arr1.length; i++) {
+//         if(!map[array1[i]]) {
+//             const item = array1[i];
+//             map[item] = true;
+//         }
+//     }
+//     // loop through second array and check if item in second array exists on created object.
+//     for (let j=0; j < arr2.length; j++){
+//         if(map[array2[j]]) {
+//             return console.log(true);
+//         }
+//     }
+//     return console.log(false)
+// }
+// //0(a + b) more effcient Time Complexity
+
+// containsCommmonItem2(array1, array2)
+
+//how to make the above problem even more readable and concise.(below)
+const array1 = ['a','b','c','x'];
+const array2 = ['z','y','wx'];
+
+function containsCommmonItem3(arr1, arr2)
+{
+    return console.log(arr1.some(item => arr2.includes(item)))
+    
 }
 
-arrayOfHiNTimes(6)
+containsCommmonItem3(array1, array2)
